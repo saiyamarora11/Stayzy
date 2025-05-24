@@ -10,7 +10,7 @@ import {
   IconMessage, 
   IconUser 
 } from '@tabler/icons-react';
-import styles from './BottomNavigation.module.css';
+import styles from './bottomNavigation.module.css';
 
 interface NavItem {
   icon: React.ReactNode;
@@ -41,12 +41,15 @@ const NavItem: FC<NavItemProps> = ({ icon, label, href, isActive, onClick }) => 
 
 const BottomNavigation: FC = () => {
   const pathname = usePathname();
+  
+  // Check if current path is home or one of the tabs
+  const isHomeOrTab = ['/', '/experiences', '/services'].includes(pathname);
 
   // Navigation items
   const navItems: NavItem[] = [
     { 
-      icon: <IconSearch size={24} stroke={1.5} />, 
-      label: 'Explore', 
+      icon: <IconHome2 size={24} stroke={1.5} />, 
+      label: 'Home', 
       href: '/' 
     },
     { 
@@ -76,7 +79,11 @@ const BottomNavigation: FC = () => {
               icon={item.icon}
               label={item.label}
               href={item.href}
-              isActive={pathname === item.href}
+              isActive={
+                item.href === '/' 
+                  ? isHomeOrTab 
+                  : pathname === item.href
+              }
               onClick={item.onClick}
             />
           </Tooltip>

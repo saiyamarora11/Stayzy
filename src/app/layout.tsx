@@ -17,6 +17,8 @@ export const metadata: Metadata = {
 
 
 
+import ClientLayout from "./components/ClientLayout";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -30,7 +32,9 @@ export default function RootLayout({
       <body>
         <MantineProvider theme={theme}>
           <QueryProvider>
-            {children}
+            <ClientLayout>
+              {children}
+            </ClientLayout>
           </QueryProvider>
         </MantineProvider>
       </body>
