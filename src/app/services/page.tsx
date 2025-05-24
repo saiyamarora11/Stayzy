@@ -1,5 +1,5 @@
-import { Container, Title, Text, SimpleGrid, Card, Group, ThemeIcon } from '@mantine/core';
-import { IconStar, IconWifi, IconHome, IconChefHat, IconMassage } from '@tabler/icons-react';
+import { Card, Container, Group, SimpleGrid, Text, ThemeIcon, Title } from '@mantine/core';
+import { IconChefHat, IconHome, IconMassage, IconStar, IconWifi } from '@tabler/icons-react';
 
 export default function ServicesPage() {
   const services = [
@@ -7,32 +7,32 @@ export default function ServicesPage() {
       title: 'House Cleaning',
       description: 'Professional cleaning for your property',
       icon: <IconHome size={24} />,
-      price: '$80'
+      price: '$80',
     },
     {
       title: 'WiFi Setup',
       description: 'Get your property connected',
       icon: <IconWifi size={24} />,
-      price: '$45'
+      price: '$45',
     },
     {
       title: 'Private Chef',
       description: 'Delicious meals cooked at your place',
       icon: <IconChefHat size={24} />,
-      price: '$120'
+      price: '$120',
     },
     {
       title: 'Massage',
       description: 'Relaxing massage in your home',
       icon: <IconMassage size={24} />,
-      price: '$95'
+      price: '$95',
     },
     {
       title: 'Premium Host',
       description: 'Upgrade to premium hosting services',
       icon: <IconStar size={24} />,
-      price: '$60'
-    }
+      price: '$60',
+    },
   ];
 
   return (
@@ -43,7 +43,7 @@ export default function ServicesPage() {
       <Text c="dimmed" ta="center" size="lg" maw={580} mx="auto" mt="xl">
         Make your stay better with these additional services
       </Text>
-      
+
       <SimpleGrid cols={{ base: 1, sm: 2, md: 3 }} mt={50} spacing="lg">
         {services.map((service, i) => (
           <Card key={i} shadow="sm" padding="lg" radius="md" withBorder>

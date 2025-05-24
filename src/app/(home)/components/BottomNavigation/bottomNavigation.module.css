@@ -13,14 +13,12 @@
   margin-bottom: env(safe-area-inset-bottom) !important;
   padding-left: calc(env(safe-area-inset-left) + 4px) !important;
   padding-right: calc(env(safe-area-inset-right) + 4px) !important;
-padding-left: 4px !important;
-padding-right: 4px !important;
-background: #ffffff !important;
+  padding-left: 4px !important;
+  padding-right: 4px !important;
+  background: #ffffff !important;
   align-items: center !important;
-                border-top: 1px solid #EBEBEB !important;
+  border-top: 1px solid #ebebeb !important;
 }
-
-
 
 .navItem {
   display: flex;

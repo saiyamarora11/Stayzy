@@ -1,12 +1,12 @@
 'use client';
 
-import { FC, ReactNode } from 'react';
 import { AppShell } from '@mantine/core';
+import { FC, ReactNode } from 'react';
 
 import { useLenis } from '../hooks/useLenis';
-import BottomNavigation from '../(home)/components/BottomNavigation';
-import Header from './Header';
 
+import BottomNavigation from '@/app/(home)/components/BottomNavigation/index';
+import Header from './Header';
 
 interface ClientLayoutProps {
   children: ReactNode;
@@ -21,13 +21,9 @@ const ClientLayout: FC<ClientLayoutProps> = ({ children }) => {
   });
 
   return (
-    <AppShell
-      padding="md"
-      header={{ height: { base: 120, md: 140 } }}
-      footer={{ height: 60 }}
-    >
+    <AppShell padding="md" header={{ height: { base: 120, md: 140 }, offset: true }}>
       <Header />
-      <AppShell.Main>
+      <AppShell.Main pt={{ base: 135, md: 150 }} pb={70}>
         {children}
       </AppShell.Main>
       <BottomNavigation />

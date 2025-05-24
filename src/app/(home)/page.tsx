@@ -1,18 +1,6 @@
+import { Container, Group, Text, ThemeIcon, Title } from '@mantine/core';
+import { IconRocket } from '@tabler/icons-react';
 import { FC } from 'react';
-import { 
-  Container, 
-  Title, 
-  Text, 
-  Button, 
-  Group, 
-  Card, 
-  SimpleGrid,
-  rem,
-  ThemeIcon
-} from '@mantine/core';
-import { 
-  IconRocket,
-} from '@tabler/icons-react';
 
 const HomePage: FC = () => {
   return (
@@ -26,7 +14,7 @@ const HomePage: FC = () => {
         </ThemeIcon>
       </Group>
       <Text c="dimmed" ta="center" size="lg" maw={580} mx="auto" mt="xl">
-       Home page
+        Home page
       </Text>
     </Container>
   );
