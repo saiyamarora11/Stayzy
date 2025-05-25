@@ -1,4 +1,5 @@
-'use client';
+import { createTheme } from '@mantine/core';
+import { Breakpoints } from './app/types/breakpoints';
 
 const breakpointValues: Breakpoints = {
   xs: '36em', // 576px - Mobile phones (large)
@@ -8,9 +9,6 @@ const breakpointValues: Breakpoints = {
   xl: '87.5em', // 1400px - Large desktop
   xxl: '100em', // 1600px - Extra large screens
 };
-
-import { createTheme } from '@mantine/core';
-import { Breakpoints } from './app/types/breakpoints';
 
 export const theme = createTheme({
   breakpoints: {

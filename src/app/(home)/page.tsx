@@ -1,8 +1,13 @@
+'use client';
+
 import { Container, Group, Text, ThemeIcon, Title } from '@mantine/core';
 import { IconRocket } from '@tabler/icons-react';
 import { FC } from 'react';
+import { useProperties } from '../api/properties';
 
 const HomePage: FC = () => {
+  const { data: properties, isLoading, error, isError } = useProperties();
+
   return (
     <Container size="lg" py="xl">
       <Title order={1} ta="center" mt={50}>
@@ -13,8 +18,8 @@ const HomePage: FC = () => {
           <IconRocket size={24} />
         </ThemeIcon>
       </Group>
-      <Text c="dimmed" ta="center" size="lg" maw={580} mx="auto" mt="xl">
-        Home page
+      <Text c="dimmed" ta="center" size="lg" maw={580} mx="auto" mt="xl" mb="xl">
+        Discover amazing properties for your next stay
       </Text>
     </Container>
   );
