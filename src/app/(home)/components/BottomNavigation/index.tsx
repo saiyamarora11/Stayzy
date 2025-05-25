@@ -1,4 +1,3 @@
-// bottom navigation
 import { Group, Tooltip, UnstyledButton } from '@mantine/core';
 import { IconHeart, IconHome2, IconUser } from '@tabler/icons-react';
 import { motion, useMotionValueEvent, useScroll } from 'framer-motion';
@@ -48,31 +47,25 @@ const BottomNavigation: FC = () => {
   const { scrollY } = useScroll();
   const [lastScrollY, setLastScrollY] = useState(0);
   const [scrollDirection, setScrollDirection] = useState<'up' | 'down' | null>(null);
-  const threshold = 10; // Minimum scroll amount to detect direction
+  const threshold = 10;
 
   useMotionValueEvent(scrollY, 'change', (current) => {
-    // Determine scroll direction
     const direction = current > lastScrollY ? 'down' : 'up';
 
-    // Only update if we've scrolled more than the threshold
     if (Math.abs(current - lastScrollY) > threshold) {
       setScrollDirection(direction);
     }
 
-    // Show navigation when:
-    // 1. User is scrolling up
-    // 2. User is near the top of the page (less than 50px)
+
     if (direction === 'up' || current < 50) {
       setVisible(true);
     }
-    // Hide navigation when:
-    // 1. User is scrolling down
-    // 2. User has scrolled past the initial threshold (50px)
+
     else if (direction === 'down' && current > 50) {
       setVisible(false);
     }
 
-    // Update the last scroll position
+
     setLastScrollY(current);
   });
 
